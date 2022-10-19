@@ -1,0 +1,23 @@
+{
+  "name": "vbs_blockly",
+  "version": "1.0.0",
+  "description": "VBS Blockly",
+  "main": "index.js",
+  "dependencies": {
+    "blockly": "^9.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bbemol/ngx-blockly-sample.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bbemol/ngx-blockly-sample/issues"
+  },
+  "homepage": "https://github.com/Bbemol/ngx-blockly-sample#readme"
+}
