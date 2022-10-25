@@ -141,34 +141,6 @@ Code.loadBlocks = function(defaultXml) {
 };
 
 /**
- * Save the blocks and reload with a different language.
- */
-Code.changeLanguage = function() {
-  // Store the blocks for the duration of the reload.
-  // MSIE 11 does not support sessionStorage on file:// URLs.
-  if (window.sessionStorage) {
-    var xml = Blockly.Xml.workspaceToDom(Code.workspace);
-    var text = Blockly.Xml.domToText(xml);
-    window.sessionStorage.loadOnceBlocks = text;
-  }
-
-  var languageMenu = document.getElementById('languageMenu');
-  var newLang = encodeURIComponent(
-      languageMenu.options[languageMenu.selectedIndex].value);
-  var search = window.location.search;
-  if (search.length <= 1) {
-    search = '?lang=' + newLang;
-  } else if (search.match(/[?&]lang=[^&]*/)) {
-    search = search.replace(/([?&]lang=)[^&]*/, '$1' + newLang);
-  } else {
-    search = search.replace(/\?/, '?lang=' + newLang + '&');
-  }
-
-  window.location = window.location.protocol + '//' +
-      window.location.host + window.location.pathname + search;
-};
-
-/**
  * Changes the output language by clicking the tab matching
  * the selected language in the codeMenu.
  */
@@ -553,18 +525,7 @@ Code.initLanguage = function() {
   };
   languages.sort(comp);
   // Populate the language selection menu.
-  var languageMenu = document.getElementById('languageMenu');
-  languageMenu.options.length = 0;
-  for (var i = 0; i < languages.length; i++) {
-    var tuple = languages[i];
-    var lang = tuple[tuple.length - 1];
-    var option = new Option(tuple[0], lang);
-    if (lang === Code.LANG) {
-      option.selected = true;
-    }
-    languageMenu.options.add(option);
-  }
-  languageMenu.addEventListener('change', Code.changeLanguage, true);
+  
 
   // Populate the coding language selection menu.
   var codeMenu = document.getElementById('code_menu');
