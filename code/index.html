@@ -14,6 +14,19 @@
     <script src="../node_modules/blockly/lua_compressed.js"></script>
     <script src="../node_modules/blockly/dart_compressed.js"></script>
     <script src="code.js"></script>
+    <script src="storage.js"></script>
+    <script src="./custom_blocks/blockClass.js"></script>
+    <script src="custom_blocks/blockSapElement.js"></script>
+    <script src="custom_blocks/blockSubProcedure.js"></script>
+    <script src="custom_blocks/blockSapStaticParameter.js"></script>
+    <script src="custom_blocks/blockFunction.js"></script>
+    <script src="custom_blocks/blockSapGo.js"></script>
+    <script src="custom_blocks/blockSapSet.js"></script>
+    <script src="custom_blocks/blockSapEnter.js"></script>
+    <script src="custom_blocks/blockAguarda.js"></script>
+    <script src="custom_blocks/blockSapSelectAll.js"></script>
+    <script src="custom_blocks/ejemplo.js"></script>
+
   </head>
   <body>
     <table width="100%" height="100%">
@@ -32,7 +45,7 @@
             <tr id="tabRow" height="1em">
               <td id="tab_blocks" class="tabon">...</td>
               <td class="tabmin tab_collapse">&nbsp;</td>
-              <td id="tab_lua" class="taboff tab_collapse">Zina</td>
+              <td id="tab_lua" class="taboff tab_collapse">VBS</td>
               <td class="tabmin tab_collapse">&nbsp;</td>
               <td id="tab_xml" class="taboff tab_collapse">XML</td>
               <td class="tabmin tab_collapse">&nbsp;</td>
@@ -42,6 +55,12 @@
                 <select id="code_menu"></select>
               </td>
               <td class="tabmax">
+                <button id="openButton" class="notext" title="...">
+                  <img src='../node_modules/blockly/media/1x1.gif' class="individual open_icon">
+                </button>
+                <button id="saveButton" class="notext" onclick="BlocklyStorage.link()" title="...">
+                  <img src='../node_modules/blockly/media/1x1.gif' class="individual save_icon">
+                </button>
                 <button id="trashButton" class="notext" title="...">
                   <img src='../node_modules/blockly/media/1x1.gif' class="trash icon21">
                 </button>
@@ -334,43 +353,22 @@
         </block>
         <block type="lists_sort"></block>
       </category>
-      <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
-        <block type="colour_picker"></block>
-        <block type="colour_random"></block>
-        <block type="colour_rgb">
-          <value name="RED">
-            <shadow type="math_number">
-              <field name="NUM">100</field>
-            </shadow>
-          </value>
-          <value name="GREEN">
-            <shadow type="math_number">
-              <field name="NUM">50</field>
-            </shadow>
-          </value>
-          <value name="BLUE">
-            <shadow type="math_number">
-              <field name="NUM">0</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="colour_blend">
-          <value name="COLOUR1">
-            <shadow type="colour_picker">
-              <field name="COLOUR">#ff0000</field>
-            </shadow>
-          </value>
-          <value name="COLOUR2">
-            <shadow type="colour_picker">
-              <field name="COLOUR">#3333ff</field>
-            </shadow>
-          </value>
-          <value name="RATIO">
-            <shadow type="math_number">
-              <field name="NUM">0.5</field>
-            </shadow>
-          </value>
-        </block>
+      <category name="Flowbot Simple" colour="%{BKY_LISTS_HUE}">
+        <block type="blockSapElement"></block>
+        <block type="blockSapStaticParameter"></block>
+        <block type="blockSapGo"></block>
+        <block type="blockSapSet"></block>
+        <block type="blockSapEnter"></block>
+        <block type="blockAguarda"></block>
+        <block type="blockSapSelectAll"></block>
+
+
+      </category>
+      <category name="Flowbot Complex" colour="%{BKY_LOGIC_HUE}">
+        <block type="blockClass"></block>
+        <block type="blockSubProcesure"></block>
+        <block type="blockFunction"></block>
+
       </category>
       <sep></sep>
       <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>

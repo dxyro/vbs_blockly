@@ -151,6 +151,18 @@ button {
   width: 21px;
   background-image: url(icons.png);
 }
+.individual {
+  height: 20px;
+  width: 20px;
+}
+.save_icon {
+  background-image: url(save_icon.png);
+  background-position: 0px 0px;
+}
+.open_icon {
+  background-image: url(open_icon.png);
+  background-position: 0px 0px;
+}
 .trash {
   background-position: 0px 0px;
 }

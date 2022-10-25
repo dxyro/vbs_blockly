@@ -543,6 +543,8 @@ Code.initLanguage = function() {
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
+  document.getElementById('openButton').title = MSG['openWorkspace'];
+  document.getElementById('saveButton').title = MSG['saveWorkspace'];
 };
 
 /**

@@ -6,6 +6,8 @@ var MSG = {
   badCode: "Program error:\n%1",
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",
+  saveWorkspace: "Save Workspace.",
+  openWorkspace: "Open WorkSpace.",
   catLogic: "Logic",
   catLoops: "Loops",
   catMath: "Math",
