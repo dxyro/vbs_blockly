@@ -15,17 +15,13 @@
     <script src="../node_modules/blockly/dart_compressed.js"></script>
     <script src="code.js"></script>
     <script src="storage.js"></script>
-    <script src="./custom_blocks/blockClass.js"></script>
-    <script src="custom_blocks/blockSapElement.js"></script>
-    <script src="custom_blocks/blockSubProcedure.js"></script>
-    <script src="custom_blocks/blockSapStaticParameter.js"></script>
-    <script src="custom_blocks/blockFunction.js"></script>
-    <script src="custom_blocks/blockSapGo.js"></script>
-    <script src="custom_blocks/blockSapSet.js"></script>
-    <script src="custom_blocks/blockSapEnter.js"></script>
-    <script src="custom_blocks/blockAguarda.js"></script>
-    <script src="custom_blocks/blockSapSelectAll.js"></script>
-    <script src="custom_blocks/ejemplo.js"></script>
+    <script type="module" src="custom_blocks/Extensions/allExtensions.js"></script>
+    <script type="module" src="custom_blocks/blocksCategoryComplex/allBlocksComplex.js"></script>
+    <script type="module" src="custom_blocks/blocksCategoryDefinitions/allBlocksDefinitions.js"></script>
+    <script type="module" src="custom_blocks/blocksCategoryLogic/allBlocksLogic.js"></script>
+    <script type="module" src="custom_blocks/blocksCategorySapActions/allBlocksSapActions.js"></script>
+    <script type="module" src="custom_blocks/blocksCategoryTest/allBlocksTest.js"></script>
+    <script type="module" src="custom_blocks/blocksCategoryUtils/allBlocksUtils.js"></script>
 
   </head>
   <body>
@@ -353,26 +349,43 @@
         </block>
         <block type="lists_sort"></block>
       </category>
-      <category name="Flowbot Simple" colour="%{BKY_LISTS_HUE}">
-        <block type="blockSapElement"></block>
-        <block type="blockSapStaticParameter"></block>
-        <block type="blockSapGo"></block>
-        <block type="blockSapSet"></block>
-        <block type="blockSapEnter"></block>
-        <block type="blockAguarda"></block>
-        <block type="blockSapSelectAll"></block>
-
-
-      </category>
-      <category name="Flowbot Complex" colour="%{BKY_LOGIC_HUE}">
-        <block type="blockClass"></block>
-        <block type="blockSubProcesure"></block>
-        <block type="blockFunction"></block>
-
-      </category>
       <sep></sep>
-      <category name="%{BKY_CATVARIABLES}" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
-    <category name="%{BKY_CATFUNCTIONS}" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
+      <category name="Flowbot Complex" colour=230>
+        <block type="blockClass"></block>
+        <block type="blockFunction"></block>
+        <block type="blockFunctionContent"></block>
+        <block type="blockSubProcedure"></block>
+      </category>
+      <category name="Flowbot Definitions" colour=330>
+      <category name="%{BKY_CATVARIABLES}" colour=330 custom="VARIABLE"></category>
+        <block type="blockSapElement"></block>
+        <block type="blockSapParameter"></block>
+      </category>
+      <category name="Flowbot Logic" colour=290>
+        <block type="blockIf"></block>
+        <block type="blockIfElse"></block>
+        <block type="blockWhile"></block>
+      </category>
+      <category name="Flowbot Sap Actions" colour=120>
+        <block type="blockSapAguarda"></block>
+        <block type="blockSapAlerts"></block>
+        <block type="blockSapEnter"></block>
+        <block type="blockSapGo"></block>
+        <block type="blockSapLogger"></block>
+        <block type="blockSapSave"></block>
+        <block type="blockSapSelectAll"></block>
+        <block type="blockSapSet"></block>
+      </category>
+      <category name="Flowbot Utils" colour=70>
+        <block type="blockInString"></block>
+        <block type="blockLowerCase"></block>
+      </category>
+      <category name="Test" colour=150>
+        <block type="dynamic_dropdown"></block>
+        <block type="blockPendejo"></block>
+
+      </category>
+
     </xml>
   </body>
 </html>
