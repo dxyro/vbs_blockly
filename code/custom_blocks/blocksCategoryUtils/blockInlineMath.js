@@ -11,7 +11,7 @@ export const definitionBlockInLineMath = {
         {
             "type": "field_dropdown",
             "name": "calculus",
-            "options": [["=","E"], ["+","P"], ["-","M"], ["*","T"], ["/","D"]]
+            "options": [["=","E"], ["+","P"], ["-","M"], ["*","T"], ["/","D"], ["&", "C"]]
         },
         {
             "type": "input_dummy"
@@ -50,6 +50,9 @@ export const codeBlockInlineMath = function(block) {
             break;
         case 'D':
             calculus = '/';
+            break;
+        case 'C':
+            calculus = '&';
             break;
     }
 
