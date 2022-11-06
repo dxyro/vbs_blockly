@@ -8,14 +8,12 @@ export const definitionBlockSapSet = {
             "type": "input_dummy"
         },
         {
-            "type": "field_input",
+            "type": "input_value",
             "name": "elementId",
-            "text": "elementId"
         },
         {
-            "type": "field_input",
+            "type": "input_value",
             "name": "simbolicName",
-            "text": "simbolicName"
         },
         {
             "type": "input_dummy",
@@ -27,6 +25,7 @@ export const definitionBlockSapSet = {
             "checked": true
         }
     ],
+    "inputsInline": false,
     "previousStatement": null,
     "nextStatement": null,
     "colour": 120,
@@ -36,8 +35,10 @@ export const definitionBlockSapSet = {
 };
 
 export const codeBlockSapSet = function(block) {
-    let text_elementid = block.getFieldValue('elementId');
-    let text_simbolicname = block.getFieldValue('simbolicName');
+    //let text_elementid = block.getFieldValue('elementId');
+    let text_elementid = Blockly.Lua.valueToCode(block, 'elementId', Blockly.Lua.ORDER_ATOMIC);
+    //let text_simbolicname = block.getFieldValue('simbolicName');
+    let text_simbolicname = Blockly.Lua.valueToCode(block, 'simbolicName', Blockly.Lua.ORDER_ATOMIC);
     let drop_elementChoosen = block.getFieldValue('elementChoosen');
     let checkbox_runbreak = block.getFieldValue('runBreak') === 'TRUE';
     let true_false;

@@ -8,9 +8,8 @@ export const definitionBlockSapGo = {
             "type": "input_dummy"
         },
         {
-            "type": "field_input",
+            "type": "input_value",
             "name": "transactionName",
-            "text": "transactionName"
         }
     ],
     "previousStatement": "operations",
@@ -21,7 +20,7 @@ export const definitionBlockSapGo = {
 };
 
 export const codeBlockSapGo = function(block) {
-    let text_transactionname = block.getFieldValue('transactionName');
+    let text_transactionname = Blockly.Lua.valueToCode(block, 'transactionName', Blockly.Lua.ORDER_ATOMIC);
     let code = `
     sapGo "/n${text_transactionname}", ""
     \n`;

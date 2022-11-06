@@ -8,9 +8,8 @@ export const definitionBlockSapLogger = {
             "type": "input_dummy"
         },
         {
-            "type": "field_input",
+            "type": "input_value",
             "name": "message",
-            "text": "custom message"
         }
     ],
     "inputsInline": false,
@@ -22,7 +21,7 @@ export const definitionBlockSapLogger = {
 };
 
 export const codeBlockSapLogger = function(block) {
-    let text_message = block.getFieldValue('message');
+    let text_message = Blockly.Lua.valueToCode(block, 'message', Blockly.Lua.ORDER_ATOMIC);
     let code = `
     logger "${text_message}"
     \n`;
