@@ -1,3 +1,4 @@
+import { typeBlockSapAbortScript, definitionBlockSapAbortScript, codeBlockSapAbortScript } from './blockSapAbortScript.js';
 import { typeBlockSapAguarda, definitionBlockSapAguarda, codeBlockSapAguarda } from './blockSapAguarda.js';
 import { typeBlockSapAlerts, definitionBlockSapAlerts, codeBlockSapAlerts } from './blockSapAlerts.js';
 import { typeBlockSapEnter, definitionBlockSapEnter, codeBlockSapEnter } from './blockSapEnter.js';
@@ -9,6 +10,7 @@ import { typeBlockSapSet, definitionBlockSapSet, codeBlockSapSet } from './block
 import { typeBlockSapTableGetValue, definitionBlockSapTableGetValue, codeBlockSapTableGetValue } from './blockSapTableGetValue.js';
 
 Blockly.defineBlocksWithJsonArray([
+    definitionBlockSapAbortScript,
     definitionBlockSapAguarda,
     definitionBlockSapAlerts,
     definitionBlockSapEnter,
@@ -20,6 +22,7 @@ Blockly.defineBlocksWithJsonArray([
     definitionBlockSapTableGetValue
 ]);
 
+Blockly.Lua[typeBlockSapAbortScript] = codeBlockSapAbortScript;
 Blockly.Lua[typeBlockSapAguarda] = codeBlockSapAguarda;
 Blockly.Lua[typeBlockSapAlerts] = codeBlockSapAlerts;
 Blockly.Lua[typeBlockSapEnter] = codeBlockSapEnter;
