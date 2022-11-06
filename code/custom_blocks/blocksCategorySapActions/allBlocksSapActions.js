@@ -2,6 +2,8 @@ import { typeBlockSapAbortScript, definitionBlockSapAbortScript, codeBlockSapAbo
 import { typeBlockSapAguarda, definitionBlockSapAguarda, codeBlockSapAguarda } from './blockSapAguarda.js';
 import { typeBlockSapAlerts, definitionBlockSapAlerts, codeBlockSapAlerts } from './blockSapAlerts.js';
 import { typeBlockSapEnter, definitionBlockSapEnter, codeBlockSapEnter } from './blockSapEnter.js';
+import { typeBlockSapFindById, definitionBlockSapFindById, codeBlockSapFindById } from './blockSapFindById.js';
+import { typeBlockSapFindByIdInLine, definitionBlockSapFindByIdInLine, codeBlockSapFindByIdInLine } from './blockSapFindByIdInLine.js';
 import { typeBlockSapGo, definitionBlockSapGo, codeBlockSapGo } from './blockSapGo.js';
 import { typeBlockSapLogger, definitionBlockSapLogger, codeBlockSapLogger } from './blockSapLogger.js';
 import { typeBlockSapSave, definitionBlockSapSave, codeBlockSapSave } from './blockSapSave.js';
@@ -14,6 +16,8 @@ Blockly.defineBlocksWithJsonArray([
     definitionBlockSapAguarda,
     definitionBlockSapAlerts,
     definitionBlockSapEnter,
+    definitionBlockSapFindById,
+    definitionBlockSapFindByIdInLine,
     definitionBlockSapGo,
     definitionBlockSapLogger,
     definitionBlockSapSave,
@@ -26,6 +30,8 @@ Blockly.Lua[typeBlockSapAbortScript] = codeBlockSapAbortScript;
 Blockly.Lua[typeBlockSapAguarda] = codeBlockSapAguarda;
 Blockly.Lua[typeBlockSapAlerts] = codeBlockSapAlerts;
 Blockly.Lua[typeBlockSapEnter] = codeBlockSapEnter;
+Blockly.Lua[typeBlockSapFindById] = codeBlockSapFindById;
+Blockly.Lua[typeBlockSapFindByIdInLine] = codeBlockSapFindByIdInLine;
 Blockly.Lua[typeBlockSapGo] = codeBlockSapGo;
 Blockly.Lua[typeBlockSapLogger] = codeBlockSapLogger;
 Blockly.Lua[typeBlockSapSave] = codeBlockSapSave;
