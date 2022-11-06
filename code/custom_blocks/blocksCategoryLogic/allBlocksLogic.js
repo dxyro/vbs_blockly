@@ -1,16 +1,16 @@
 import { typeBlockIf, definitionBlockIf, codeBlockIf } from './blockIf.js'
 import { typeBlockIfElse, definitionBlockIfElse, codeBlockIfElse } from './blockIfElse.js'
-import { typeBlockOr, definitionBlockOr, codeBlockOr } from './blockOr.js'
+import { typeBlockOrAnd, definitionBlockOrAnd, codeBlockOrAnd } from './blockOrAnd.js'
 import { typeBlockWhile, definitionBlockWhile, codeBlockWhile } from './blockWhile.js'
 
 Blockly.defineBlocksWithJsonArray([
     definitionBlockIf,
     definitionBlockIfElse,
-    definitionBlockOr,
+    definitionBlockOrAnd,
     definitionBlockWhile
 ]);
 
 Blockly.Lua[typeBlockIf] = codeBlockIf;
 Blockly.Lua[typeBlockIfElse] = codeBlockIfElse;
-Blockly.Lua[typeBlockOr] = codeBlockOr;
+Blockly.Lua[typeBlockOrAnd] = codeBlockOrAnd;
 Blockly.Lua[typeBlockWhile] = codeBlockWhile;
