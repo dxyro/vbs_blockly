@@ -9,7 +9,11 @@ import {
 
 import {
     extDynamicSapElementDropDown,
-    funcDynamicSapElementDropDown
+    extDynamicFunctionDropDown,
+    extDynamicVariableDropDown,
+    funcDynamicSapElementDropDown,
+    funcDynamicFunctionDropDown,
+    funcDynamicVariableDropDown,
 } from './dynamicExtensions.js'
 
 Blockly.Extensions.register(extWarningOnClassChange, funcWarningOnClassChange);
@@ -17,3 +21,5 @@ Blockly.Extensions.register(extWarningOnFunctionContentChange, funcWarningOnFunc
 Blockly.Extensions.register(extWarningOnWhileChange, funcWarningOnWhileChange);
 
 Blockly.Extensions.register(extDynamicSapElementDropDown, funcDynamicSapElementDropDown);
+Blockly.Extensions.register(extDynamicFunctionDropDown, funcDynamicFunctionDropDown);
+Blockly.Extensions.register(extDynamicVariableDropDown, funcDynamicVariableDropDown);

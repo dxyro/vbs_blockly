@@ -10,6 +10,6 @@ export const definitionBlockSapAlerts = {
 };
 
 export const codeBlockSapAlerts = function(block) {
-    var code = 'sapAllAlerts';
+    let code = 'sapAllAlerts';
     return [code, null];
 };

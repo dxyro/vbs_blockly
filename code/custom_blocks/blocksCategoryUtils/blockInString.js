@@ -2,7 +2,7 @@ export const typeBlockInString = "blockInString";
 
 export const definitionBlockInString = {
     "type": typeBlockInString,
-    "message0": "is %1 in %2 %3",
+    "message0": "is %1 in %2",
     "args0": [
         {
             "type": "field_input",
@@ -10,15 +10,11 @@ export const definitionBlockInString = {
             "text": "string"
         },
         {
-            "type": "input_dummy"
-        },
-        {
             "type": "input_value",
             "name": "targetString",
             "check": "String"
         }
     ],
-    "inputsInline": true,
     "output": "Boolean",
     "colour": 70,
     "tooltip": typeBlockInString,

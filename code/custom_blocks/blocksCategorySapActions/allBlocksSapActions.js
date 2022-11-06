@@ -6,6 +6,7 @@ import { typeBlockSapLogger, definitionBlockSapLogger, codeBlockSapLogger } from
 import { typeBlockSapSave, definitionBlockSapSave, codeBlockSapSave } from './blockSapSave.js';
 import { typeBlockSapSelectAll, definitionBlockSapSelectAll, codeBlockSapSelectAll } from './blockSapSelectAll.js';
 import { typeBlockSapSet, definitionBlockSapSet, codeBlockSapSet } from './blockSapSet.js';
+import { typeBlockSapTableGetValue, definitionBlockSapTableGetValue, codeBlockSapTableGetValue } from './blockSapTableGetValue.js';
 
 Blockly.defineBlocksWithJsonArray([
     definitionBlockSapAguarda,
@@ -15,7 +16,8 @@ Blockly.defineBlocksWithJsonArray([
     definitionBlockSapLogger,
     definitionBlockSapSave,
     definitionBlockSapSelectAll,
-    definitionBlockSapSet
+    definitionBlockSapSet,
+    definitionBlockSapTableGetValue
 ]);
 
 Blockly.Lua[typeBlockSapAguarda] = codeBlockSapAguarda;
@@ -26,3 +28,4 @@ Blockly.Lua[typeBlockSapLogger] = codeBlockSapLogger;
 Blockly.Lua[typeBlockSapSave] = codeBlockSapSave;
 Blockly.Lua[typeBlockSapSelectAll] = codeBlockSapSelectAll;
 Blockly.Lua[typeBlockSapSet] = codeBlockSapSet;
+Blockly.Lua[typeBlockSapTableGetValue] = codeBlockSapTableGetValue;

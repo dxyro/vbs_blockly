@@ -1,8 +1,10 @@
+import {camelize} from '../Commons/allCommons.js'
+
 export const typeBlockFunction = "blockFunction"
 
 export const definitionBlockFunction = {
     "type": typeBlockFunction,
-    "message0": "actions %1 name: %2 %3 %4",
+    "message0": "function %1 name: %2 %3 %4",
     "args0": [
         {
             "type": "input_dummy"
@@ -29,7 +31,7 @@ export const definitionBlockFunction = {
 };
 
 export const codeBlockFunction = function(block) {
-    let text_functionname = block.getFieldValue('functionName');
+    let text_functionname = camelize(block.getFieldValue('functionName'));
     let statements_operations = Blockly.Lua.statementToCode(block, 'operations');
     let code = `
     Private Function ${text_functionname}()
