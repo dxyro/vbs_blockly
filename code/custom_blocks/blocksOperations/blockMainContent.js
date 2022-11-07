@@ -1,7 +1,7 @@
-export const typeBlockFunctionContent = "blockFunctionContent";
+export const typeBlockMainContent = "blockMainContent";
 
-export const definitionBlockFunctionContent = {
-    "type": typeBlockFunctionContent,
+export const definitionBlockMainContent = {
+    "type": typeBlockMainContent,
     "message0": "main %1 content: %2",
     "args0": [
         {
@@ -16,12 +16,12 @@ export const definitionBlockFunctionContent = {
     "previousStatement": "blockClass",
     "nextStatement": "blockFunction",
     "colour": 230,
-    "tooltip": typeBlockFunctionContent,
+    "tooltip": typeBlockMainContent,
     "helpUrl": "",
     "extensions": ["extWarningOnFunctionContentChange"]
 };
 
-export const codeBlockFunctionContent = function(block) {
+export const codeBlockMainContent = function(block) {
     let statements_operations = Blockly.Lua.statementToCode(block, 'operations');
     let code = `
     Private Function content()
