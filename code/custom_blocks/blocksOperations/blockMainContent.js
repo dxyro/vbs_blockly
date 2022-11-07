@@ -17,7 +17,7 @@ export const definitionBlockMainContent = {
     "nextStatement": "blockFunction",
     "colour": 230,
     "tooltip": typeBlockMainContent,
-    "helpUrl": "",
+    "helpUrl": "./blocks_documentation/blocksOperations/blockMainContentHelp.html",
     "extensions": ["extWarningOnFunctionContentChange"]
 };
 
