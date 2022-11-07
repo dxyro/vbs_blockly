@@ -1,4 +1,4 @@
-import {camelize, cleanPublic } from '../Commons/allCommons.js'
+import {camelize, cleanPublic } from '../commons/allCommons.js'
 
 export const typeBlockClass = "blockClass";
 
@@ -40,7 +40,7 @@ export const definitionBlockClass = {
     ],
     "colour": 230,
     "tooltip": typeBlockClass,
-    "helpUrl": "./blockClassHelp.html",
+    "helpUrl": "./blocks_documentation/blocksOperations/blockClassHelp.html",
     "extensions": ["extWarningOnClassChange"]
 };
 

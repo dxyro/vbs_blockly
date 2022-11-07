@@ -1,4 +1,4 @@
-import {camelize} from '../Commons/allCommons.js'
+import {camelize} from '../commons/allCommons.js'
 
 export const typeBlockFunction = "blockFunction"
 

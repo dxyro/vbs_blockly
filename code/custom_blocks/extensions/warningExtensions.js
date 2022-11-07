@@ -7,7 +7,7 @@ export const funcWarningOnClassChange =  function() {
         if (this.getInput('actions').connection.targetBlock()) {
             this.setWarningText(null);
         } else {
-            this.setWarningText('Must have at least a block inside in logic.');
+            this.setWarningText('Must have a main logic block inside in logic booth.');
         }
     });
 };

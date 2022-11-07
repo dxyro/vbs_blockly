@@ -2,7 +2,7 @@ export const typeBlockFunctionContent = "blockFunctionContent";
 
 export const definitionBlockFunctionContent = {
     "type": typeBlockFunctionContent,
-    "message0": "main logic %1 %2",
+    "message0": "main %1 content: %2",
     "args0": [
         {
             "type": "input_dummy"
