@@ -18,7 +18,7 @@ export const definitionBlockCallFunction = {
     "nextStatement": null,
     "colour": 230,
     "tooltip": typeBlockCallFunction,
-    "helpUrl": "",
+    "helpUrl": "./blocks_documentation/blocksOperations/blockCallFunctionHelp.html",
     "extensions": ["extDynamicFunctionDropDown"]
 };
 
