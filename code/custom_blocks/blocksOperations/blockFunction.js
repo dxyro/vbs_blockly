@@ -4,7 +4,7 @@ export const typeBlockFunction = "blockFunction"
 
 export const definitionBlockFunction = {
     "type": typeBlockFunction,
-    "message0": "function %1 name: %2 %3 %4",
+    "message0": "function %1 name: %2 %3 actions:%4",
     "args0": [
         {
             "type": "input_dummy"
@@ -27,7 +27,7 @@ export const definitionBlockFunction = {
     "nextStatement": "blockFunction",
     "colour": 230,
     "tooltip": typeBlockFunction,
-    "helpUrl": ""
+    "helpUrl": "./blocks_documentation/blocksOperations/blockFunctionHelp.html"
 };
 
 export const codeBlockFunction = function(block) {
