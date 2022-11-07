@@ -1,8 +1,10 @@
+import {camelize} from '../commons/allCommons.js'
+
 export const typeBlockSubProcedure = "blockSubProcedure";
 
 export const definitionBlockSubProcedure = {
     "type": typeBlockSubProcedure,
-    "message0": "process %1 name: %2 %3 %4",
+    "message0": "sub process %1 name: %2 %3 actions:%4",
     "args0": [
         {
             "type": "input_dummy"
@@ -10,7 +12,7 @@ export const definitionBlockSubProcedure = {
         {
             "type": "field_input",
             "name": "subName",
-            "text": "subName"
+            "text": "processName"
         },
         {
             "type": "input_dummy"
@@ -25,11 +27,11 @@ export const definitionBlockSubProcedure = {
     "nextStatement": null,
     "colour": 230,
     "tooltip": typeBlockSubProcedure,
-    "helpUrl": ""
+    "helpUrl": "./blocks_documentation/blocksOperations/blockSubProcedureHelp.html"
 };
 
 export const codeBlockSubProcedure = function(block) {
-    let text_subname = block.getFieldValue('subName');
+    let text_subname = camelize(block.getFieldValue('subName'));
     let statements_parameters = Blockly.Lua.statementToCode(block, 'parameters');
     let code = `
     Public Sub ${text_subname}()
