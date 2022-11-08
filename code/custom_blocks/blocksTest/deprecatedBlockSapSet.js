@@ -1,7 +1,7 @@
 Blockly.defineBlocksWithJsonArray([
     {
-        "type": "blockSapSelectAll",
-        "message0": "write special %1 element id: %2 name: %3 break: %4",
+        "type": "blockSapSet",
+        "message0": "write %1 element id: %2 name: %3 sapElement: %4 break: %5",
         "args0": [
             {
                 "type": "input_dummy"
@@ -17,6 +17,11 @@ Blockly.defineBlocksWithJsonArray([
                 "text": "simbolicName"
             },
             {
+                "type": "field_variable",
+                "name": "sapElement",
+                "variable": "item"
+            },
+            {
                 "type": "field_checkbox",
                 "name": "runBreak",
                 "checked": true
@@ -24,15 +29,16 @@ Blockly.defineBlocksWithJsonArray([
         ],
         "previousStatement": null,
         "nextStatement": null,
-        "colour": 230,
-        "tooltip": "",
+        "colour": 120,
+        "tooltip": "blockSapSet",
         "helpUrl": ""
     }
 ]);
 
-Blockly.Lua['blockSapSelectAll'] = function(block) {
+Blockly.Lua['blockSapSet'] = function(block) {
     let text_elementid = block.getFieldValue('elementId');
     let text_simbolicname = block.getFieldValue('simbolicName');
+    let variable_sapelement = Blockly.Lua.nameDB_.getNameForUserVariable_(block.getFieldValue('sapElement'));
     let checkbox_runbreak = block.getFieldValue('runBreak') === 'TRUE';
     let true_false;
     if (checkbox_runbreak){
@@ -41,7 +47,8 @@ Blockly.Lua['blockSapSelectAll'] = function(block) {
         true_false = 'False'
     }
 
-    let code = `sapSelectAll "${text_elementid}", "${text_simbolicname}", ${true_false}
-    `;
+    let code = `
+    sapSet "${text_elementid}", "${text_simbolicname}", ${variable_sapelement}, ${true_false}
+    \n`;
     return code;
 };
