@@ -14,7 +14,8 @@
     <script src="../node_modules/blockly/lua_compressed.js"></script>
     <script src="../node_modules/blockly/dart_compressed.js"></script>
     <script src="code.js"></script>
-    <script src="storage.js"></script>
+    <!-- <script src="storage.js"></script> --> 
+    <script src="../appengine/storage.js"></script>
     <script src="./custom_blocks/blockClass.js"></script>
     <script src="custom_blocks/blockSapElement.js"></script>
     <script src="custom_blocks/blockSubProcedure.js"></script>
@@ -26,6 +27,8 @@
     <script src="custom_blocks/blockAguarda.js"></script>
     <script src="custom_blocks/blockSapSelectAll.js"></script>
     <script src="custom_blocks/ejemplo.js"></script>
+
+    <script src="../msg/js/en.js"></script>
 
   </head>
   <body>
@@ -55,11 +58,15 @@
                 <select id="code_menu"></select>
               </td>
               <td class="tabmax">
-                <button id="openButton" class="notext" title="...">
+                <input type="file" id="xmlupload" style="display: none;" onchange="handleFiles(this)">
+                <button id="XMLUploadFile" class="notext" title="..." onclick="XMLUploadFile()">
                   <img src='../node_modules/blockly/media/1x1.gif' class="individual open_icon">
                 </button>
-                <button id="saveButton" class="notext" onclick="BlocklyStorage.link()" title="...">
+                <button id="downloadXMLFile" class="notext" onclick="downloadXMLFile()" title="...">
                   <img src='../node_modules/blockly/media/1x1.gif' class="individual save_icon">
+                </button>
+                <button id="downloadCodeFile" class="notext" onclick="" title="...">
+                  <img src='../node_modules/blockly/media/1x1.gif' class="individual code_file_icon">
                 </button>
                 <button id="trashButton" class="notext" title="...">
                   <img src='../node_modules/blockly/media/1x1.gif' class="trash icon21">

@@ -477,10 +477,26 @@ Code.init = function() {
     BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
     BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
     BlocklyStorage['XML_ERROR'] = MSG['loadError'];
-    Code.bindClick(linkButton,
-        function() {BlocklyStorage.link(Code.workspace);});
+    Code.bindClick(
+      linkButton,
+      function() {
+        BlocklyStorage.link(Code.workspace);
+      });
   } else if (linkButton) {
     linkButton.className = 'disabled';
+  }
+
+  var downloadCodeFile = document.getElementById('downloadCodeFile');
+  if ('BlocklyStorage' in window) {
+    Code.bindClick(
+      downloadCodeFile,
+      function() {
+          var code = Blockly.Lua.workspaceToCode(Code.workspace);
+          // Remove the 'prettyprinted' class, so that Prettify will recalculate.
+          saveFile(code);
+      });
+  } else if (downloadCodeFile) {
+    downloadCodeFile.className = 'disabled';
   }
 
   for (var i = 0; i < Code.TABS_.length; i++) {
@@ -543,8 +559,8 @@ Code.initLanguage = function() {
   document.getElementById('linkButton').title = MSG['linkTooltip'];
   document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
-  document.getElementById('openButton').title = MSG['openWorkspace'];
-  document.getElementById('saveButton').title = MSG['saveWorkspace'];
+  document.getElementById('XMLUploadFile').title = MSG['XMLUploadFile'];
+  document.getElementById('downloadCodeFile').title = MSG['downloadCodeFile'];
 };
 
 /**
@@ -594,3 +610,65 @@ document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
 document.write('<script src="../node_modules/blockly/msg/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
+
+
+const saveFile = (content) => {
+  const name = "vbs_file.vbs"
+  const a = document.createElement("a");
+  const file = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(file);
+  a.href = url;
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function downloadXMLFile () {
+  var xmlDom = Blockly.Xml.workspaceToDom(Code.workspace);
+  var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+  const name = "vbs_file.xml"
+  const a = document.createElement("a");
+  const file = new Blob([xmlText], { type: 'text/plain' });
+  const url = URL.createObjectURL(file);
+  a.href = url;
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+  
+
+function XMLUploadFile() {
+  let tab_xml = document.getElementById("tab_xml");
+  tab_xml.click()
+  document.getElementById('xmlupload').click();
+}
+
+function handleFiles(me) {
+  const fileList = me.files; /* now you can work with the file list */
+  if (fileList.length) {
+    const [file] = fileList
+    const regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xml)$/;
+    if (regex.test(me.value.toLowerCase())) {
+      if (typeof (FileReader) != "undefined") {
+        const content = document.querySelector('#content_xml');
+        const reader = new FileReader();
+        reader.addEventListener("load", () => {
+          // this will then display a text file
+          content.value = reader.result;
+        }, false);
+
+        if (file) {
+          reader.readAsText(file);
+        }
+      } else {
+        alert("This browser does not support HTML5.");
+      }
+    } else {
+      alert("Please upload a valid XML file.");
+    }
+  } else {
+    alert("You must select a file");
+  }
+  
+}
+

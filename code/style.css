@@ -149,18 +149,22 @@ button {
 .icon21 {
   height: 21px;
   width: 21px;
-  background-image: url(icons.png);
+  background-image: url(icons/icons.png);
 }
 .individual {
   height: 20px;
   width: 20px;
 }
 .save_icon {
-  background-image: url(save_icon.png);
+  background-image: url(icons/save_icon.png);
   background-position: 0px 0px;
 }
 .open_icon {
-  background-image: url(open_icon.png);
+  background-image: url(icons/open_icon.png);
+  background-position: 0px 0px;
+}
+.code_file_icon {
+  background-image: url(icons/code_file_icon.png);
   background-position: 0px 0px;
 }
 .trash {
