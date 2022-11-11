@@ -53,12 +53,15 @@
                 <select id="code_menu"></select>
               </td>
               <td class="tabmax">
-                <input type="file" id="xmlupload" style="display: none;" onchange="handleFiles(this)">
+                <input type="file" id="file_upload" style="display: none;" onchange="handleFiles(this)">
                 <button id="XMLUploadFile" class="notext" title="..." onclick="XMLUploadFile()">
                   <img src='blockly/media/1x1.gif' class="individual open_icon">
                 </button>
-                <button id="downloadXMLFile" class="notext" onclick="downloadXMLFile()" title="...">
-                  <img src='blockly/media/1x1.gif' class="individual save_icon">
+                <button id="downloadXMLFile" class="notext" onclick="downloadFile('xml')" title="...">
+                  <img src='blockly/media/1x1.gif' class="individual xml_icon">
+                </button>
+                <button id="downloadJSONFile" class="notext" onclick="downloadFile('json')" title="...">
+                  <img src='blockly/media/1x1.gif' class="individual json_icon">
                 </button>
                 <button id="downloadCodeFile" class="notext" onclick="" title="...">
                   <img src='blockly/media/1x1.gif' class="individual code_file_icon">
