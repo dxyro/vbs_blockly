@@ -561,6 +561,8 @@ Code.initLanguage = function() {
   document.getElementById('trashButton').title = MSG['trashTooltip'];
   document.getElementById('XMLUploadFile').title = MSG['XMLUploadFile'];
   document.getElementById('downloadCodeFile').title = MSG['downloadCodeFile'];
+  document.getElementById('downloadXMLFile').title = MSG['downloadXMLFile'];
+  document.getElementById('downloadJSONFile').title = MSG['downloadJSONFile'];
 };
 
 /**
@@ -623,40 +625,62 @@ const saveFile = (content) => {
   URL.revokeObjectURL(url);
 }
 
-function downloadXMLFile () {
-  var xmlDom = Blockly.Xml.workspaceToDom(Code.workspace);
-  var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
-  const name = "vbs_file.xml"
+function downloadFile (download_type) {
+  var content = ""
+  if (download_type == "xml") {
+    var xmlDom = Blockly.Xml.workspaceToDom(Code.workspace);
+    var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+    content = [xmlText]
+  } else {
+    content = [JSON.stringify(Blockly.serialization.workspaces.save(Code.workspace), null, 2)];
+  }
+  const name = `${download_type}_file_${getFormattedTime()}.${download_type}`
   const a = document.createElement("a");
-  const file = new Blob([xmlText], { type: 'text/plain' });
+  const file = new Blob(content, { type: 'text/plain' });
   const url = URL.createObjectURL(file);
   a.href = url;
   a.download = name;
   a.click();
   URL.revokeObjectURL(url);
 }
+
+function getFormattedTime() {
+  var today = new Date();
+  var y = today.getFullYear();
+  // JavaScript months are 0-based.
+  var m = today.getMonth() + 1;
+  var d = today.getDate();
+  var h = today.getHours();
+  var mi = today.getMinutes();
+  var s = today.getSeconds();
+  return y + "_" + m + "_" + d + "_" + h + "_" + mi + "_" + s;
+}
   
 
 function XMLUploadFile() {
-  let tab_xml = document.getElementById("tab_xml");
-  tab_xml.click()
-  document.getElementById('xmlupload').click();
+  document.getElementById('file_upload').click();
 }
 
 function handleFiles(me) {
   const fileList = me.files; /* now you can work with the file list */
   if (fileList.length) {
+    let file_type = null
     const [file] = fileList
-    const regex = /^([a-zA-Z0-9\s_\\.\-:])+(.xml)$/;
-    if (regex.test(me.value.toLowerCase())) {
+    if (file.type == 'text/xml') {
+      file_type = 'xml'
+    } else if (file.type == 'application/json'){
+      file_type = 'json'
+    }
+    if (file_type) {
+      let tab_xml = document.getElementById(`tab_${file_type}`);
+      tab_xml.click()
       if (typeof (FileReader) != "undefined") {
-        const content = document.querySelector('#content_xml');
+        const content = document.querySelector(`#content_${file_type}`);
         const reader = new FileReader();
         reader.addEventListener("load", () => {
           // this will then display a text file
           content.value = reader.result;
         }, false);
-
         if (file) {
           reader.readAsText(file);
         }
@@ -664,11 +688,12 @@ function handleFiles(me) {
         alert("This browser does not support HTML5.");
       }
     } else {
-      alert("Please upload a valid XML file.");
+      alert("Please upload a valid file.");
     }
   } else {
     alert("You must select a file");
   }
+  me.value = "";
   
 }
 

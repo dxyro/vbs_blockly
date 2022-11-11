@@ -7,6 +7,8 @@ var MSG = {
   timeout: "Maximum execution iterations exceeded.",
   trashTooltip: "Discard all blocks.",
   downloadCodeFile: "Download code file.",
+  downloadXMLFile: "Download xml file.",
+  downloadJSONFile: "Download json file.",
   XMLUploadFile: "Upload xml file.",
   catLogic: "Logic",
   catLoops: "Loops",
