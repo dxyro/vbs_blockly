@@ -64,6 +64,7 @@ export const codeBlockClass = function(block) {
     let code = `
     Option Explicit
     include "scriptsupport.VBS"
+    
     Class ${text_camelize_classname}
     
       Private objBaseScript
@@ -73,7 +74,7 @@ export const codeBlockClass = function(block) {
       End Sub
       
       Public Sub run(local)
-        Set objBaseScript = (New BasicScript)()
+        Set objBaseScript = (New BaseScript)()
         objBaseScript.setNameScript = "${text_classname}"
         
         If local Then
