@@ -26,7 +26,7 @@ export const codeBlockMainContent = function(block) {
     let code = `
     Private Function content()
     ${statements_operations}
-    End Sub
+    End Function
     \n`;
     return code;
 };

@@ -62,16 +62,18 @@ export const codeBlockClass = function(block) {
     }
 
     let code = `
+    Option Explicit
+    include "scriptsupport.VBS"
     Class ${text_camelize_classname}
     
       Private objBaseScript
       ${statements_elements}
       Public Sub setParamsObjEnv()
       ${statements_parameters}
-      EndSub
+      End Sub
       
       Public Sub run(local)
-        Set objBaseScript = (NewScript)()
+        Set objBaseScript = (New BasicScript)()
         objBaseScript.setNameScript = "${text_classname}"
         
         If local Then
@@ -100,7 +102,7 @@ export const codeBlockClass = function(block) {
       Dim fso, currentDirectory ,f,s
       Set fso = CreateObject("Scripting.FileSystemObject")
         
-      currentDirectory = Left(WScript.ScriptFullName,(Len(WScript.ScriptFullName))-(Len(WScript.ScriptFullName))
+      currentDirectory = Left(WScript.ScriptFullName,(Len(WScript.ScriptFullName))-(Len(WScript.ScriptFullName)))
         
       Set f = fso.OpenTextFile(currentDirectory & "\" & filename,1)
       s = f.ReadAll()
