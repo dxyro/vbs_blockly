@@ -6,16 +6,15 @@
     <meta name="google" value="notranslate">
     <title>Zina Blocks</title>
     <link rel="stylesheet" href="style.css">
-    <script src="../node_modules/blockly/blockly_compressed.js"></script>
-    <script src="../node_modules/blockly/blocks_compressed.js"></script>
-    <script src="../node_modules/blockly/javascript_compressed.js"></script>
-    <script src="../node_modules/blockly/python_compressed.js"></script>
-    <script src="../node_modules/blockly/php_compressed.js"></script>
-    <script src="../node_modules/blockly/lua_compressed.js"></script>
-    <script src="../node_modules/blockly/dart_compressed.js"></script>
+    <script src="blockly/blockly_compressed.js"></script>
+    <script src="blockly/blocks_compressed.js"></script>
+    <script src="blockly/javascript_compressed.js"></script>
+    <script src="blockly/python_compressed.js"></script>
+    <script src="blockly/php_compressed.js"></script>
+    <script src="blockly/lua_compressed.js"></script>
+    <script src="blockly/dart_compressed.js"></script>
     <script src="code.js"></script>
     <!-- <script src="storage.js"></script> --> 
-    <script src="../appengine/storage.js"></script>
     <script src="storage.js"></script>
     <script type="module" src="custom_blocks/extensions/allExtensions.js"></script>
     <script type="module" src="custom_blocks/blocksOperations/allBlocksOperations.js"></script>
@@ -24,7 +23,7 @@
     <script type="module" src="custom_blocks/blocksSapActions/allBlocksSapActions.js"></script>
     <script type="module" src="custom_blocks/blocksTest/allBlocksTest.js"></script>
     <script type="module" src="custom_blocks/blocksUtils/allBlocksUtils.js"></script>
-    <script src="../msg/js/en.js"></script>
+    <script src="js/en.js"></script>
 
   </head>
   <body>
@@ -56,25 +55,25 @@
               <td class="tabmax">
                 <input type="file" id="file_upload" style="display: none;" onchange="handleFiles(this)">
                 <button id="XMLUploadFile" class="notext" title="..." onclick="XMLUploadFile()">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="individual open_icon">
+                  <img src='blockly/media/1x1.gif' class="individual open_icon">
                 </button>
                 <button id="downloadXMLFile" class="notext" onclick="downloadFile('xml')" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="individual xml_icon">
+                  <img src='blockly/media/1x1.gif' class="individual xml_icon">
                 </button>
                 <button id="downloadJSONFile" class="notext" onclick="downloadFile('json')" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="individual json_icon">
+                  <img src='blockly/media/1x1.gif' class="individual json_icon">
                 </button>
                 <button id="downloadCodeFile" class="notext" onclick="" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="individual code_file_icon">
+                  <img src='blockly/media/1x1.gif' class="individual code_file_icon">
                 </button>
                 <button id="trashButton" class="notext" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="trash icon21">
+                  <img src='blockly/media/1x1.gif' class="trash icon21">
                 </button>
                 <button id="linkButton" class="notext" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="link icon21">
+                  <img src='blockly/media/1x1.gif' class="link icon21">
                 </button>
                 <button id="runButton" class="notext primary" title="...">
-                  <img src='../node_modules/blockly/media/1x1.gif' class="run icon21">
+                  <img src='blockly/media/1x1.gif' class="run icon21">
                 </button>
               </td>
             </tr>
@@ -93,14 +92,14 @@
 
     <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
       <sep></sep>
-      <category name="Flowbot Operations" colour=230>
+      <category name="Operations" colour=230>
         <block type="blockCallFunction"></block>
         <block type="blockClass"></block>
         <block type="blockFunction"></block>
         <block type="blockMainContent"></block>
         <block type="blockSubProcedure"></block>
       </category>
-      <category name="Flowbot Definitions" colour=330>
+      <category name="Definitions" colour=330>
         <block type="blockDeclareVariable"></block>
         <block type="blockGetVariable"></block>
         <block type="blockSetVariable"></block>
@@ -108,13 +107,13 @@
         <block type="blockSapElement"></block>
         <block type="blockSapParameter"></block>
       </category>
-      <category name="Flowbot Logic" colour=290>
+      <category name="Logic" colour=290>
         <block type="blockIf"></block>
         <block type="blockIfElse"></block>
         <block type="blockOrAnd"></block>
         <block type="blockWhile"></block>
       </category>
-      <category name="Flowbot Sap Actions" colour=120>
+      <category name="Sap Actions" colour=120>
         <block type="blockSapAbortScript"></block>
         <block type="blockSapAguarda"></block>
         <block type="blockSapAlerts"></block>
@@ -128,7 +127,7 @@
         <block type="blockSapSet"></block>
         <block type="blockSapTableGetValue"></block>
       </category>
-      <category name="Flowbot Utils" colour=70>
+      <category name="Utils" colour=70>
         <block type="blockCast"></block>
         <block type="blockInString"></block>
         <block type="blockLowerCase"></block>

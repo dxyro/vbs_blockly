@@ -439,7 +439,7 @@ Code.init = function() {
            length: 3,
            colour: '#ccc',
            snap: true},
-       media: '../node_modules/blockly/media/',
+       media: 'blockly/media/',
        rtl: rtl,
        toolbox: toolboxXml,
        zoom:
@@ -609,7 +609,7 @@ Code.discard = function() {
 // Load the Code demo's language strings.
 document.write('<script src="msg/' + Code.LANG + '.js"></script>\n');
 // Load Blockly's language strings.
-document.write('<script src="../node_modules/blockly/msg/' + Code.LANG + '.js"></script>\n');
+document.write('<script src="blockly/msg/' + Code.LANG + '.js"></script>\n');
 
 window.addEventListener('load', Code.init);
 
