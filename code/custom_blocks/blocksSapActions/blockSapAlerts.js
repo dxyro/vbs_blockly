@@ -6,7 +6,7 @@ export const definitionBlockSapAlerts = {
     "output": "String",
     "colour": 120,
     "tooltip": typeBlockSapAlerts,
-    "helpUrl": ""
+    "helpUrl": "./blocks_documentation/blocksSapActions/blockSapAlertsHelp.html"
 };
 
 export const codeBlockSapAlerts = function(block) {
