@@ -2,7 +2,7 @@ export const typeBlockSapAguarda = "blockSapAguarda";
 
 export const definitionBlockSapAguarda = {
     "type": typeBlockSapAguarda,
-    "message0": "wait %1 seconds: %2",
+    "message0": "aguarda %1 seconds: %2",
     "args0": [
         {
             "type": "input_dummy"
@@ -18,7 +18,7 @@ export const definitionBlockSapAguarda = {
     "nextStatement": null,
     "colour": 120,
     "tooltip": typeBlockSapAguarda,
-    "helpUrl": ""
+    "helpUrl": "./blocks_documentation/blocksSapActions/blockSapAguardaHelp.html"
 };
 
 export const codeBlockSapAguarda = function(block) {
