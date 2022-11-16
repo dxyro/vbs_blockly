@@ -17,7 +17,8 @@ export const definitionBlockSapAbortScript = {
     },
     {
         "type": "input_value",
-        "name": "message"
+        "name": "message",
+        "check": "String"
     }
 ],
     "inputsInline": false,
@@ -25,7 +26,7 @@ export const definitionBlockSapAbortScript = {
     "nextStatement": null,
     "colour": 120,
     "tooltip": typeBlockSapAbortScript,
-    "helpUrl": ""
+    "helpUrl": "./blocks_documentation/blocksSapActions/blockSapAbortScriptHelp.html"
 };
 
 export const codeBlockSapAbortScript = function(block) {
