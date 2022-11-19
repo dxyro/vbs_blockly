@@ -31,8 +31,7 @@ export const definitionBlockSapTableGetValue = {
     }
 ],
     "inputsInline": false,
-    "previousStatement": null,
-    "nextStatement": null,
+    "output": null,
     "colour": 120,
     "tooltip": typeBlockSapTableGetValue,
     "helpUrl": ""
@@ -57,5 +56,5 @@ export const codeBlockSapTableGetValue = function(block) {
         runBreak = 'False'
     }
     let code = `sapTableGetVAlue(${value_tableid}, ${value_line}, ${value_column}, ${tryAlter}, ${runBreak})`;
-    return code;
+    return [code, null];
 };

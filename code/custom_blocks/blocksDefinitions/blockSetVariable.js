@@ -36,9 +36,13 @@ export const codeBlockSetVariable = function(block) {
     let value_name = Blockly.Lua.valueToCode(block, 'varValue', Blockly.Lua.ORDER_ATOMIC);
     let code;
     if(dropdown_type==="S"){
-        code = `${drop_variableChoosen} = "${value_name}"`;
+        code = `
+    ${drop_variableChoosen} = "${value_name}"
+        `;
     }else{
-        code = `${drop_variableChoosen} = ${value_name}`;
+        code = `
+    ${drop_variableChoosen} = ${value_name}
+        `;
     }
     return code;
 };

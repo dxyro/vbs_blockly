@@ -469,22 +469,22 @@ Code.init = function() {
 
   Code.bindClick('trashButton',
       function() {Code.discard(); Code.renderContent();});
-  Code.bindClick('runButton', Code.runJS);
+  // Code.bindClick('runButton', Code.runJS);
   // Disable the link button if page isn't backed by App Engine storage.
-  var linkButton = document.getElementById('linkButton');
-  if ('BlocklyStorage' in window) {
-    BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
-    BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
-    BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
-    BlocklyStorage['XML_ERROR'] = MSG['loadError'];
-    Code.bindClick(
-      linkButton,
-      function() {
-        BlocklyStorage.link(Code.workspace);
-      });
-  } else if (linkButton) {
-    linkButton.className = 'disabled';
-  }
+  // var linkButton = document.getElementById('linkButton');
+  // if ('BlocklyStorage' in window) {
+  //   BlocklyStorage['HTTPREQUEST_ERROR'] = MSG['httpRequestError'];
+  //   BlocklyStorage['LINK_ALERT'] = MSG['linkAlert'];
+  //   BlocklyStorage['HASH_ERROR'] = MSG['hashError'];
+  //   BlocklyStorage['XML_ERROR'] = MSG['loadError'];
+  //   Code.bindClick(
+  //     linkButton,
+  //     function() {
+  //       BlocklyStorage.link(Code.workspace);
+  //     });
+  // } else if (linkButton) {
+  //   linkButton.className = 'disabled';
+  // }
 
   var downloadCodeFile = document.getElementById('downloadCodeFile');
   if ('BlocklyStorage' in window) {
@@ -556,8 +556,8 @@ Code.initLanguage = function() {
   document.getElementById('title').textContent = MSG['title'];
   document.getElementById('tab_blocks').textContent = MSG['blocks'];
 
-  document.getElementById('linkButton').title = MSG['linkTooltip'];
-  document.getElementById('runButton').title = MSG['runTooltip'];
+  // document.getElementById('linkButton').title = MSG['linkTooltip'];
+  // document.getElementById('runButton').title = MSG['runTooltip'];
   document.getElementById('trashButton').title = MSG['trashTooltip'];
   document.getElementById('XMLUploadFile').title = MSG['XMLUploadFile'];
   document.getElementById('downloadCodeFile').title = MSG['downloadCodeFile'];
