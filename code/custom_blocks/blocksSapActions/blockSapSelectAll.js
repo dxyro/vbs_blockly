@@ -2,7 +2,7 @@ export const typeBlockSapSelectAll = "blockSapSelectAll";
 
 export const definitionBlockSapSelectAll = {
     "type": typeBlockSapSelectAll,
-    "message0": "write special %1 element id: %2 name: %3 break: %4",
+    "message0": "select all special %1 element id: %2 name: %3 break: %4",
     "args0": [
         {
             "type": "input_dummy"
