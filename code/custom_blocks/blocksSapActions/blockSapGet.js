@@ -41,8 +41,6 @@ export const codeBlockSapGet = function(block) {
         true_false = 'False'
     }
 
-    let code = `
-    sapGet "${text_elementid}", "${text_simbolicname}", ${true_false}
-    \n`;
+    let code = `sapGet "${text_elementid}", "${text_simbolicname}", ${true_false}`;
     return [code, null];
 };

@@ -11,7 +11,7 @@ export const definitionBlockMath = {
         {
             "type": "field_dropdown",
             "name": "calculus",
-            "options": [["=","E"], ["+","P"], ["-","M"], ["*","T"], ["/","D"], ["&", "C"]]
+            "options": [["=","1"], ["+","2"], ["-","3"], ["*","4"], ["/","5"], ["&", "6"], ["<>", "7"]]
         },
         {
             "type": "input_dummy"
@@ -22,7 +22,7 @@ export const definitionBlockMath = {
         }
     ],
     "inputsInline": true,
-    "output": "String",
+    "output": null,
     "colour": 70,
     "tooltip": typeBlockMath,
     "helpUrl": ""
@@ -35,26 +35,28 @@ export const codeBlockMath = function(block) {
 
     let calculus = '';
     switch (dropdown_calculus){
-        case 'E':
+        case "1":
             calculus = '=';
             break;
-        case 'P':
+        case "2":
             calculus = '+';
             break;
-        case 'M':
+        case "3":
             calculus = '-';
             break;
-        case 'T':
+        case "4":
             calculus = '*';
             break;
-        case 'D':
+        case "5":
             calculus = '/';
             break;
-        case 'C':
+        case "6":
             calculus = '&';
             break;
+        case "7":
+            calculus = '<>';
+            break;
     }
-
 
     let code = `${value_firstexp} ${calculus} ${value_secondexp}`;
     return [code, null];
