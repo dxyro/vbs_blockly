@@ -25,7 +25,7 @@ export const definitionBlockSapReplace = {
     ],
     "inputsInline": false,
     "output": null,
-    "colour": 120,
+    "colour": 70,
     "tooltip": typeBlockSapReplace,
     "helpUrl": "",
 };

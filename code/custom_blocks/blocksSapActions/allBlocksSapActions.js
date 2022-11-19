@@ -6,7 +6,6 @@ import { typeBlockSapFindById, definitionBlockSapFindById, codeBlockSapFindById 
 import { typeBlockSapFindByIdInLine, definitionBlockSapFindByIdInLine, codeBlockSapFindByIdInLine } from './blockSapFindByIdInLine.js';
 import { typeBlockSapGo, definitionBlockSapGo, codeBlockSapGo } from './blockSapGo.js';
 import { typeBlockSapLogger, definitionBlockSapLogger, codeBlockSapLogger } from './blockSapLogger.js';
-import { typeBlockSapReplace, definitionBlockSapReplace, codeBlockSapReplace } from './blockSapReplace.js';
 import { typeBlockSapSave, definitionBlockSapSave, codeBlockSapSave } from './blockSapSave.js';
 import { typeBlockSapSelectAll, definitionBlockSapSelectAll, codeBlockSapSelectAll } from './blockSapSelectAll.js';
 import { typeBlockSapSet, definitionBlockSapSet, codeBlockSapSet } from './blockSapSet.js';
@@ -22,7 +21,6 @@ Blockly.defineBlocksWithJsonArray([
     definitionBlockSapFindByIdInLine,
     definitionBlockSapGo,
     definitionBlockSapLogger,
-    definitionBlockSapReplace,
     definitionBlockSapSave,
     definitionBlockSapSelectAll,
     definitionBlockSapSet,
@@ -38,7 +36,6 @@ Blockly.Lua[typeBlockSapFindById] = codeBlockSapFindById;
 Blockly.Lua[typeBlockSapFindByIdInLine] = codeBlockSapFindByIdInLine;
 Blockly.Lua[typeBlockSapGo] = codeBlockSapGo;
 Blockly.Lua[typeBlockSapLogger] = codeBlockSapLogger;
-Blockly.Lua[typeBlockSapReplace] = codeBlockSapReplace;
 Blockly.Lua[typeBlockSapSave] = codeBlockSapSave;
 Blockly.Lua[typeBlockSapSelectAll] = codeBlockSapSelectAll;
 Blockly.Lua[typeBlockSapSet] = codeBlockSapSet;
